@@ -57,7 +57,15 @@ namespace UIForms.Views.Editoras
         private void RemoverEditora()
         {
             var IdEditora = (int)DgEditoras.SelectedRows[0].Cells["Id"].Value;
-            _editoraRepository.Delete(IdEditora);
+            bool remocaoValidada = _editoraRepository.ValidarRemocao(IdEditora);
+
+            if (remocaoValidada)
+            {
+                _editoraRepository.Delete(IdEditora);
+                return;
+            }
+
+            MessageBox.Show("A editora não pode ser removida, pois existe vinculo com livro(s).", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void BtnNovo_Click(object sender, EventArgs e)

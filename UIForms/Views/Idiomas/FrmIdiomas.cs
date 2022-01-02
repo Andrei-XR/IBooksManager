@@ -57,7 +57,15 @@ namespace UIForms.Views.Idiomas
         private void RemoverIdioma()
         {
             var IdIdioma = (int)DgIdiomas.SelectedRows[0].Cells["Id"].Value;
-            _idiomaRepository.Delete(IdIdioma);
+            bool remocaoValidada = _idiomaRepository.ValidarRemocao(IdIdioma);
+
+            if (remocaoValidada)
+            {
+                _idiomaRepository.Delete(IdIdioma);
+                return;
+            }
+
+            MessageBox.Show("O idioma não pode ser removido, pois existe vinculo com livro(s).", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void BtnNovo_Click(object sender, EventArgs e)

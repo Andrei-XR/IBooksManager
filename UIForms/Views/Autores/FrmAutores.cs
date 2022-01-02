@@ -13,7 +13,7 @@ namespace UIForms.Views.Autores
 {
     public partial class FrmAutores : FrmBase
     {
-        private AutorRepository _autorRepository = new AutorRepository();
+        private readonly AutorRepository _autorRepository = new AutorRepository();
 
         public FrmAutores()
         {
@@ -57,7 +57,15 @@ namespace UIForms.Views.Autores
         private void RemoverAutor()
         {
             var IdAutor = (int)DgAutores.SelectedRows[0].Cells["Id"].Value;
-            _autorRepository.Delete(IdAutor);
+            bool remocaoValidada = _autorRepository.ValidarRemocao(IdAutor);
+
+            if (remocaoValidada)
+            {
+                _autorRepository.Delete(IdAutor);
+                return;
+            }
+
+            MessageBox.Show("O autor não pode ser removido, pois existe vinculo com livro(s).", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void BtnNovo_Click(object sender, EventArgs e)
