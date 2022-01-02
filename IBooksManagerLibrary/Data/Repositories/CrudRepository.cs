@@ -11,7 +11,7 @@ namespace IBooksManagerLibrary.Data.Repositories
 {
     public abstract class CrudRepository<T> : ICrudRepository<T> where T : class
     {
-        protected DbIBooksContext _context = new DbIBooksContext();
+        protected readonly DbIBooksContext _context = new DbIBooksContext();
 
         public virtual void Add(T entity)
         {
@@ -19,11 +19,12 @@ namespace IBooksManagerLibrary.Data.Repositories
             _context.SaveChanges();
         }
 
-        public virtual void Delete(int id)
+        public virtual bool Delete(int id)
         {
             var entity = _context.Set<T>().Find(id);
             _context.Set<T>().Remove(entity);
             _context.SaveChanges();
+            return true;
         }
 
         public virtual T Get(Expression<Func<T, bool>> expression, params string[] includes)
@@ -36,10 +37,8 @@ namespace IBooksManagerLibrary.Data.Repositories
 
         public virtual List<T> List(string[] includes = null)
         {
-            var query = _context.Set<T>().AsNoTracking();
-            var querier = query.IncludeMany(includes);
-
-            return querier.ToList();
+            var query = _context.Set<T>().AsNoTracking().IncludeMany(includes);
+            return query.ToList();
         }
 
         public virtual void Update(T entity)

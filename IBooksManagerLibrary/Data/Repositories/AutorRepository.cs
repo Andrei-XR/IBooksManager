@@ -10,5 +10,10 @@ namespace IBooksManagerLibrary.Data.Repositories
 {
     public class AutorRepository : CrudRepository<Autor>, IAutorRepository
     {
+        public bool ValidarRemocao(int id)
+        {
+            bool semRelacaoComLivros = !_context.Livros.Any(l => l.AutorId == id);
+            return semRelacaoComLivros;
+        }
     }
 }

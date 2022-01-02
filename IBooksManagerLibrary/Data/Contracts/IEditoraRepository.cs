@@ -9,5 +9,6 @@ namespace IBooksManagerLibrary.Data.Contracts
 {
     public interface IEditoraRepository
     {
+        bool ValidarRemocao(int id);
     }
 }

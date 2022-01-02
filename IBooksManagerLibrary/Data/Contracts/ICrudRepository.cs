@@ -10,7 +10,7 @@ namespace IBooksManagerLibrary.Data.Contracts
     public interface ICrudRepository<TEntity>
     {
         void Add(TEntity entity);
-        void Delete(int id);
+        bool Delete(int id);
         void Update(TEntity entity);
         List<TEntity> List(string[] includes = null);
         TEntity Get(Expression<Func<TEntity, bool>> expression, string[] includes = null);

@@ -9,5 +9,6 @@ namespace IBooksManagerLibrary.Data.Contracts
 {
     public interface IIdiomaRepository
     {
+        bool ValidarRemocao(int id);
     }
 }

@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace IBooksManagerLibrary.Data.Repositories
 {
-    public class IdiomaRepository : CrudRepository<Idioma>, IIdiomaRepository
+    public class CategoriaRepository : CrudRepository<Categoria>, ICategoriaRepository
     {
         public bool ValidarRemocao(int id)
         {
-            bool semRelacaoComLivros = !_context.Livros.Any(l => l.IdiomaId == id);
+            bool semRelacaoComLivros = !_context.Livros.Any(l => l.CategoriaId == id);
             return semRelacaoComLivros;
         }
     }
