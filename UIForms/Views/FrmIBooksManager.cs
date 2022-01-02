@@ -1,6 +1,4 @@
 ﻿using IBooksManagerLibrary.Data;
-using IBooksManagerLibrary.Data.Contracts;
-using IBooksManagerLibrary.Data.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UIForms.Views.Autores;
+using UIForms.Views.Categorias;
 using UIForms.Views.Editoras;
 using UIForms.Views.Idiomas;
 using UIForms.Views.Livros;
@@ -25,6 +24,7 @@ namespace UIForms.Views
         public FrmIBooksManager()
         {
             InitializeComponent();
+            Seeder.Run(); 
         }
 
         private void ExibirFormulario(Form form)
@@ -60,9 +60,15 @@ namespace UIForms.Views
             ExibirFormulario(new FrmIdiomas());
         }
 
+        private void BtnCategorias_Click(object sender, EventArgs e)
+        {
+            ExibirFormulario(new FrmCategorias());
+        }
+
         private void BtnSair_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }
 }

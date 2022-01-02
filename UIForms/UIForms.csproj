@@ -82,6 +82,30 @@
     <Compile Include="Views\Autores\FrmNovo.Designer.cs">
       <DependentUpon>FrmNovo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Categorias\FrmCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Categorias\FrmCategorias.Designer.cs">
+      <DependentUpon>FrmCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Categorias\FrmDetalhes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Categorias\FrmDetalhes.Designer.cs">
+      <DependentUpon>FrmDetalhes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Categorias\FrmEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Categorias\FrmEditar.Designer.cs">
+      <DependentUpon>FrmEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Categorias\FrmNovo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Categorias\FrmNovo.Designer.cs">
+      <DependentUpon>FrmNovo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Editoras\FrmDetalhes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +209,18 @@
       <DependentUpon>FrmEditar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Autores\FrmNovo.resx">
+      <DependentUpon>FrmNovo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Categorias\FrmCategorias.resx">
+      <DependentUpon>FrmCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Categorias\FrmDetalhes.resx">
+      <DependentUpon>FrmDetalhes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Categorias\FrmEditar.resx">
+      <DependentUpon>FrmEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Categorias\FrmNovo.resx">
       <DependentUpon>FrmNovo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Editoras\FrmDetalhes.resx">

@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Contracts\IAutorRepository.cs" />
+    <Compile Include="Data\Contracts\ICategoriaRepository.cs" />
     <Compile Include="Data\Contracts\ICrudRepository.cs" />
     <Compile Include="Data\Contracts\IEditoraRepository.cs" />
     <Compile Include="Data\Contracts\IEntity.cs" />
@@ -60,16 +61,23 @@
     <Compile Include="Data\DbIBooksContext.cs" />
     <Compile Include="Data\QueryExtensions.cs" />
     <Compile Include="Data\Repositories\AutorRepository.cs" />
+    <Compile Include="Data\Repositories\CategoriaRepository.cs" />
     <Compile Include="Data\Repositories\CrudRepository.cs" />
     <Compile Include="Data\Repositories\EditoraRepository.cs" />
     <Compile Include="Data\Repositories\IdiomaRepository.cs" />
     <Compile Include="Data\Repositories\LivroRepository.cs" />
+    <Compile Include="Data\Seeder.cs" />
     <Compile Include="Migrations\202112230014337_inicial.cs" />
     <Compile Include="Migrations\202112230014337_inicial.designer.cs">
       <DependentUpon>202112230014337_inicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112310155508_criacao_tabela_categorias.cs" />
+    <Compile Include="Migrations\202112310155508_criacao_tabela_categorias.designer.cs">
+      <DependentUpon>202112310155508_criacao_tabela_categorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Autor.cs" />
+    <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Livro.cs" />
     <Compile Include="Models\Editora.cs" />
     <Compile Include="Models\Idioma.cs" />
@@ -82,6 +90,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202112230014337_inicial.resx">
       <DependentUpon>202112230014337_inicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112310155508_criacao_tabela_categorias.resx">
+      <DependentUpon>202112310155508_criacao_tabela_categorias.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

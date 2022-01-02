@@ -18,7 +18,6 @@ namespace IBooksManagerLibrary.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             base.OnModelCreating(modelBuilder);
         }
 
@@ -26,5 +25,6 @@ namespace IBooksManagerLibrary.Data
         public DbSet<Autor> Autores { get; set; }
         public DbSet<Editora> Editoras { get; set; }
         public DbSet<Idioma> Idiomas { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
     }
 }
