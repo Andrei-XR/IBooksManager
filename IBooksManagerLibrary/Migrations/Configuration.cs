@@ -37,6 +37,12 @@
                 context.Idiomas.Add(new Idioma { Nome = "Portugues-Br" });
                 context.SaveChanges();
             }
+
+            if (!context.Categorias.Any())
+            {
+                context.Categorias.Add(new Categoria { Nome = "Romance" });
+                context.SaveChanges();
+            }
         }
     }
 }
