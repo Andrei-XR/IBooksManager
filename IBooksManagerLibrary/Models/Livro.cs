@@ -13,7 +13,6 @@ namespace IBooksManagerLibrary.Models
     {
         public int Id { get; set; }
         public string Titulo { get; set; }
-        public string Genero { get; set; }
         public decimal Preco { get; set; }
         public int Paginas { get; set; }
         public int Quantidade { get; set; }
@@ -21,10 +20,12 @@ namespace IBooksManagerLibrary.Models
         public int IdiomaId { get; set; }
         public int AutorId { get; set; }
         public int EditoraId { get; set; }
+        public int CategoriaId { get; set; }
 
         public Autor Autor { get; set; }
-        public Editora Editora {get;set;}
-        public Idioma Idioma {get;set;}
+        public Editora Editora { get; set; }
+        public Idioma Idioma { get; set; }
+        public Categoria Categoria { get; set; }
 
     }
 }

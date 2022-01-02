@@ -14,10 +14,11 @@ namespace UIForms.Views.Livros
 {
     public partial class FrmEditar : FrmBase
     {
-        private LivroRepository livroRepository = new LivroRepository();
-        private AutorRepository autorRepository = new AutorRepository();
-        private EditoraRepository editoraRepository = new EditoraRepository();
-        private IdiomaRepository idiomaRepository = new IdiomaRepository();
+        private readonly LivroRepository _livroRepository = new LivroRepository();
+        private readonly AutorRepository _autorRepository = new AutorRepository();
+        private readonly EditoraRepository _editoraRepository = new EditoraRepository();
+        private readonly IdiomaRepository _idiomaRepository = new IdiomaRepository();
+        private readonly CategoriaRepository _categoriaRepository = new CategoriaRepository();
         private Livro Livro;
         private int IdLivro;
 
@@ -29,48 +30,54 @@ namespace UIForms.Views.Livros
             CarregarAutores();
             CarregarEditoras();
             CarregarIdiomas();
+            CarregarCategorias();
             CarregarDadosLivro();
         }
 
         private void BuscarLivro()
         {
-            this.Livro = livroRepository.Get(l => l.Id == this.IdLivro);
+            this.Livro = _livroRepository.Get(l => l.Id == this.IdLivro);
         }
 
         private void CarregarAutores()
         {
-            var autores = autorRepository.List().OrderBy(a => a.Nome).ToList();
+            var autores = _autorRepository.List().OrderBy(a => a.Nome).ToList();
 
             CbAutor.DisplayMember = "Nome";
             CbAutor.ValueMember = "Id";
             CbAutor.DataSource = autores;
-            CbAutor.SelectedIndex = 0;
         }
 
         public void CarregarEditoras()
         {
-            var editoras = editoraRepository.List().OrderBy(e => e.Nome).ToList();
+            var editoras = _editoraRepository.List().OrderBy(e => e.Nome).ToList();
 
             CbEditora.DisplayMember = "Nome";
             CbEditora.ValueMember = "Id";
             CbEditora.DataSource = editoras;
-            CbEditora.SelectedIndex = 0;
         }
 
         public void CarregarIdiomas()
         {
-            var idiomas = idiomaRepository.List().OrderBy(i => i.Nome).ToList();
+            var idiomas = _idiomaRepository.List().OrderBy(i => i.Nome).ToList();
 
             CbIdioma.DisplayMember = "Nome";
             CbIdioma.ValueMember = "Id";
             CbIdioma.DataSource = idiomas;
-            CbIdioma.SelectedIndex = 0;
+        }
+
+        private void CarregarCategorias()
+        {
+            var categorias = _categoriaRepository.List().OrderBy(c => c.Nome).ToList();
+
+            CbCategoria.DisplayMember = "Nome";
+            CbCategoria.ValueMember = "Id";
+            CbCategoria.DataSource = categorias;
         }
 
         private void CarregarDadosLivro()
         {
             TxtTitulo.Text = this.Livro.Titulo;
-            TxtGenero.Text = this.Livro.Genero;
             NudPreco.Value = this.Livro.Preco;
             NudPaginas.Value = this.Livro.Paginas;
             NudAno.Value = this.Livro.Ano;
@@ -78,12 +85,12 @@ namespace UIForms.Views.Livros
             CbAutor.SelectedValue = this.Livro.AutorId;
             CbEditora.SelectedValue = this.Livro.EditoraId;
             CbIdioma.SelectedValue = this.Livro.IdiomaId;
+            CbCategoria.SelectedValue = this.Livro.CategoriaId;
         }
 
         private void SalvarEdicaoLivro()
         {
             this.Livro.Titulo = TxtTitulo.Text;
-            this.Livro.Genero = TxtGenero.Text;
             this.Livro.Preco = NudPreco.Value;
             this.Livro.Paginas = (int)NudPaginas.Value;
             this.Livro.Ano = (int)NudAno.Value;
@@ -91,8 +98,9 @@ namespace UIForms.Views.Livros
             this.Livro.AutorId = (int)CbAutor.SelectedValue;
             this.Livro.EditoraId = (int)CbEditora.SelectedValue;
             this.Livro.IdiomaId = (int)CbIdioma.SelectedValue;
+            this.Livro.CategoriaId = (int)CbCategoria.SelectedValue;
 
-            livroRepository.Update(this.Livro);
+            _livroRepository.Update(this.Livro);
         }
 
         private void BtnSalvar_Click(object sender, EventArgs e)

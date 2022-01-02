@@ -14,10 +14,11 @@ namespace UIForms.Views.Livros
 {
     public partial class FrmNovo : FrmBase
     {
-        private LivroRepository livroRepository = new LivroRepository();
-        private AutorRepository autorRepository = new AutorRepository();
-        private EditoraRepository editoraRepository = new EditoraRepository();
-        private IdiomaRepository idiomaRepository = new IdiomaRepository();
+        private readonly LivroRepository _livroRepository = new LivroRepository();
+        private readonly AutorRepository _autorRepository = new AutorRepository();
+        private readonly EditoraRepository _editoraRepository = new EditoraRepository();
+        private readonly IdiomaRepository _idiomaRepository = new IdiomaRepository();
+        private readonly CategoriaRepository _categoriaRepository = new CategoriaRepository();
 
         public FrmNovo()
         {
@@ -25,11 +26,12 @@ namespace UIForms.Views.Livros
             CarregarAutores();
             CarregarEditoras();
             CarregarIdiomas();
+            CarregarCategorias();
         }
 
-        public void CarregarAutores()
+        private void CarregarAutores()
         {
-            var autores = autorRepository.List();
+            var autores = _autorRepository.List().OrderBy(a => a.Nome).ToList();
 
             CbAutor.DisplayMember = "Nome";
             CbAutor.ValueMember = "Id";
@@ -37,9 +39,9 @@ namespace UIForms.Views.Livros
             CbAutor.SelectedIndex = 0;
         }
 
-        public void CarregarEditoras()
+        private void CarregarEditoras()
         {
-            var editoras = editoraRepository.List();
+            var editoras = _editoraRepository.List().OrderBy(e => e.Nome).ToList();
 
             CbEditora.DisplayMember = "Nome";
             CbEditora.ValueMember = "Id";
@@ -47,9 +49,9 @@ namespace UIForms.Views.Livros
             CbEditora.SelectedIndex = 0;
         }
 
-        public void CarregarIdiomas()
+        private void CarregarIdiomas()
         {
-            var idiomas = idiomaRepository.List();
+            var idiomas = _idiomaRepository.List().OrderBy(i => i.Nome).ToList();
 
             CbIdioma.DisplayMember = "Nome";
             CbIdioma.ValueMember = "Id";
@@ -57,12 +59,21 @@ namespace UIForms.Views.Livros
             CbIdioma.SelectedIndex = 0;
         }
 
-        public void SalvarLivro()
+        private void CarregarCategorias()
+        {
+            var categorias = _categoriaRepository.List().OrderBy(c => c.Nome).ToList();
+
+            CbCategoria.DisplayMember = "Nome";
+            CbCategoria.ValueMember = "Id";
+            CbCategoria.DataSource = categorias;
+            CbCategoria.SelectedIndex = 0;
+        }
+
+        private void SalvarLivro()
         {
             var livro = new Livro
             {
                 Titulo = TxtTitulo.Text,
-                Genero = TxtGenero.Text,
                 Preco = NudPreco.Value,
                 Paginas = (int)NudPaginas.Value,
                 Quantidade = (int)NudQuantidade.Value,
@@ -70,9 +81,10 @@ namespace UIForms.Views.Livros
                 AutorId = (int)CbAutor.SelectedValue,
                 EditoraId = (int)CbEditora.SelectedValue,
                 IdiomaId = (int)CbIdioma.SelectedValue,
+                CategoriaId = (int)CbCategoria.SelectedValue,
             };
 
-            livroRepository.Add(livro);
+            _livroRepository.Add(livro);
             this.Close();
         }
 

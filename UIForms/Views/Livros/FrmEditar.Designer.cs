@@ -43,11 +43,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.NudPreco = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.TxtGenero = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtTitulo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.CbCategoria = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.NudAno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudPaginas)).BeginInit();
@@ -201,13 +201,6 @@
             this.label4.TabIndex = 29;
             this.label4.Text = "Paginas:";
             // 
-            // TxtGenero
-            // 
-            this.TxtGenero.Location = new System.Drawing.Point(94, 64);
-            this.TxtGenero.Name = "TxtGenero";
-            this.TxtGenero.Size = new System.Drawing.Size(260, 22);
-            this.TxtGenero.TabIndex = 32;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -242,6 +235,17 @@
             this.label1.TabIndex = 26;
             this.label1.Text = "Titulo:";
             // 
+            // CbCategoria
+            // 
+            this.CbCategoria.DisplayMember = "label";
+            this.CbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbCategoria.FormattingEnabled = true;
+            this.CbCategoria.Location = new System.Drawing.Point(94, 62);
+            this.CbCategoria.Name = "CbCategoria";
+            this.CbCategoria.Size = new System.Drawing.Size(260, 24);
+            this.CbCategoria.TabIndex = 41;
+            this.CbCategoria.ValueMember = "value";
+            // 
             // FrmEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -253,6 +257,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.CbEditora);
             this.Controls.Add(this.label8);
+            this.Controls.Add(this.CbCategoria);
             this.Controls.Add(this.CbAutor);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.NudAno);
@@ -262,7 +267,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.NudPreco);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.TxtGenero);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TxtTitulo);
@@ -296,10 +300,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown NudPreco;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TxtGenero;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtTitulo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox CbCategoria;
     }
 }

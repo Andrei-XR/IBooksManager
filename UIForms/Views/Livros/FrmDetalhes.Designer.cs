@@ -40,8 +40,6 @@
             this.GbDadosLivro = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.LblTitulo = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.LblGenero = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.LblQuantidade = new System.Windows.Forms.Label();
             this.LblPreco = new System.Windows.Forms.Label();
@@ -50,10 +48,14 @@
             this.LblAno = new System.Windows.Forms.Label();
             this.LblPaginas = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.LblCategoria = new System.Windows.Forms.Label();
             this.GbDadosIdioma.SuspendLayout();
             this.GbDadosEditora.SuspendLayout();
             this.GbDadosAutor.SuspendLayout();
             this.GbDadosLivro.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // GbDadosIdioma
@@ -72,15 +74,15 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(6, 38);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 16);
+            this.label5.Size = new System.Drawing.Size(51, 16);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Nome:";
+            this.label5.Text = "Idioma:";
             // 
             // LblIdioma
             // 
             this.LblIdioma.AutoSize = true;
             this.LblIdioma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblIdioma.Location = new System.Drawing.Point(52, 38);
+            this.LblIdioma.Location = new System.Drawing.Point(63, 38);
             this.LblIdioma.Name = "LblIdioma";
             this.LblIdioma.Size = new System.Drawing.Size(19, 16);
             this.LblIdioma.TabIndex = 0;
@@ -102,15 +104,15 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 16);
+            this.label3.Size = new System.Drawing.Size(53, 16);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Nome:";
+            this.label3.Text = "Editora:";
             // 
             // LblEditora
             // 
             this.LblEditora.AutoSize = true;
             this.LblEditora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblEditora.Location = new System.Drawing.Point(52, 38);
+            this.LblEditora.Location = new System.Drawing.Point(65, 38);
             this.LblEditora.Name = "LblEditora";
             this.LblEditora.Size = new System.Drawing.Size(19, 16);
             this.LblEditora.TabIndex = 0;
@@ -132,15 +134,15 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(6, 38);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(47, 16);
+            this.label12.Size = new System.Drawing.Size(41, 16);
             this.label12.TabIndex = 0;
-            this.label12.Text = "Nome:";
+            this.label12.Text = "Autor:";
             // 
             // LblAutor
             // 
             this.LblAutor.AutoSize = true;
             this.LblAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblAutor.Location = new System.Drawing.Point(52, 38);
+            this.LblAutor.Location = new System.Drawing.Point(53, 38);
             this.LblAutor.Name = "LblAutor";
             this.LblAutor.Size = new System.Drawing.Size(19, 16);
             this.LblAutor.TabIndex = 0;
@@ -150,8 +152,6 @@
             // 
             this.GbDadosLivro.Controls.Add(this.label1);
             this.GbDadosLivro.Controls.Add(this.LblTitulo);
-            this.GbDadosLivro.Controls.Add(this.label2);
-            this.GbDadosLivro.Controls.Add(this.LblGenero);
             this.GbDadosLivro.Controls.Add(this.label4);
             this.GbDadosLivro.Controls.Add(this.LblQuantidade);
             this.GbDadosLivro.Controls.Add(this.LblPreco);
@@ -186,29 +186,10 @@
             this.LblTitulo.TabIndex = 0;
             this.LblTitulo.Text = "...";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Genêro:";
-            // 
-            // LblGenero
-            // 
-            this.LblGenero.AutoSize = true;
-            this.LblGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblGenero.Location = new System.Drawing.Point(67, 60);
-            this.LblGenero.Name = "LblGenero";
-            this.LblGenero.Size = new System.Drawing.Size(19, 16);
-            this.LblGenero.TabIndex = 0;
-            this.LblGenero.Text = "...";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 87);
+            this.label4.Location = new System.Drawing.Point(6, 60);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 16);
             this.label4.TabIndex = 0;
@@ -218,7 +199,7 @@
             // 
             this.LblQuantidade.AutoSize = true;
             this.LblQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblQuantidade.Location = new System.Drawing.Point(295, 87);
+            this.LblQuantidade.Location = new System.Drawing.Point(293, 60);
             this.LblQuantidade.Name = "LblQuantidade";
             this.LblQuantidade.Size = new System.Drawing.Size(19, 16);
             this.LblQuantidade.TabIndex = 0;
@@ -228,7 +209,7 @@
             // 
             this.LblPreco.AutoSize = true;
             this.LblPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPreco.Location = new System.Drawing.Point(67, 87);
+            this.LblPreco.Location = new System.Drawing.Point(67, 60);
             this.LblPreco.Name = "LblPreco";
             this.LblPreco.Size = new System.Drawing.Size(19, 16);
             this.LblPreco.TabIndex = 0;
@@ -237,7 +218,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(234, 87);
+            this.label10.Location = new System.Drawing.Point(232, 60);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 16);
             this.label10.TabIndex = 0;
@@ -246,7 +227,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(234, 32);
+            this.label6.Location = new System.Drawing.Point(6, 87);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 16);
             this.label6.TabIndex = 0;
@@ -256,7 +237,7 @@
             // 
             this.LblAno.AutoSize = true;
             this.LblAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblAno.Location = new System.Drawing.Point(295, 60);
+            this.LblAno.Location = new System.Drawing.Point(293, 33);
             this.LblAno.Name = "LblAno";
             this.LblAno.Size = new System.Drawing.Size(19, 16);
             this.LblAno.TabIndex = 0;
@@ -266,7 +247,7 @@
             // 
             this.LblPaginas.AutoSize = true;
             this.LblPaginas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPaginas.Location = new System.Drawing.Point(295, 32);
+            this.LblPaginas.Location = new System.Drawing.Point(67, 87);
             this.LblPaginas.Name = "LblPaginas";
             this.LblPaginas.Size = new System.Drawing.Size(19, 16);
             this.LblPaginas.TabIndex = 0;
@@ -275,17 +256,48 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(234, 60);
+            this.label8.Location = new System.Drawing.Point(232, 33);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(34, 16);
             this.label8.TabIndex = 0;
             this.label8.Text = "Ano:";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.LblCategoria);
+            this.groupBox1.Location = new System.Drawing.Point(12, 336);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(347, 61);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Dados Categoria";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 38);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(69, 16);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Categoria:";
+            // 
+            // LblCategoria
+            // 
+            this.LblCategoria.AutoSize = true;
+            this.LblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCategoria.Location = new System.Drawing.Point(81, 38);
+            this.LblCategoria.Name = "LblCategoria";
+            this.LblCategoria.Size = new System.Drawing.Size(19, 16);
+            this.LblCategoria.TabIndex = 0;
+            this.LblCategoria.Text = "...";
+            // 
             // FrmDetalhes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 347);
+            this.ClientSize = new System.Drawing.Size(371, 411);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.GbDadosIdioma);
             this.Controls.Add(this.GbDadosEditora);
             this.Controls.Add(this.GbDadosAutor);
@@ -301,6 +313,8 @@
             this.GbDadosAutor.PerformLayout();
             this.GbDadosLivro.ResumeLayout(false);
             this.GbDadosLivro.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -319,8 +333,6 @@
         private System.Windows.Forms.GroupBox GbDadosLivro;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LblTitulo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label LblGenero;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label LblQuantidade;
         private System.Windows.Forms.Label LblPreco;
@@ -329,5 +341,8 @@
         private System.Windows.Forms.Label LblAno;
         private System.Windows.Forms.Label LblPaginas;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label LblCategoria;
     }
 }
