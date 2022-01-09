@@ -20,7 +20,7 @@ namespace UIForms.Views.Livros
         public FrmDetalhes(int id)
         {
             InitializeComponent();
-            this.Livro = livroRepository.Get(l => l.Id == id, new[] { "Autor", "Editora", "Idioma", "Categoria" });
+            this.Livro = livroRepository.Get(l => l.Id == id, new[] { "Autor", "Editora", "Idioma", "Categorias" });
             CarregarDadosLivro();
         }
 
@@ -34,7 +34,7 @@ namespace UIForms.Views.Livros
             LblAutor.Text = this.Livro.Autor.Nome;
             LblEditora.Text = this.Livro.Editora.Nome;
             LblIdioma.Text = this.Livro.Idioma.Nome;
-            LblCategoria.Text = this.Livro.Categoria.Nome;
+            LblCategoria.Text = string.Join(", ", this.Livro.Categorias.Select(c => c.Nome));
         }
     }
 }

@@ -63,10 +63,9 @@ namespace UIForms.Views.Livros
         {
             var categorias = _categoriaRepository.List().OrderBy(c => c.Nome).ToList();
 
-            CbCategoria.DisplayMember = "Nome";
-            CbCategoria.ValueMember = "Id";
-            CbCategoria.DataSource = categorias;
-            CbCategoria.SelectedIndex = 0;
+            ((ListBox)CkListCategorias).DataSource = categorias;
+            ((ListBox)CkListCategorias).DisplayMember = "Nome";
+            ((ListBox)CkListCategorias).ValueMember = "Id";
         }
 
         private void SalvarLivro()
@@ -81,7 +80,7 @@ namespace UIForms.Views.Livros
                 AutorId = (int)CbAutor.SelectedValue,
                 EditoraId = (int)CbEditora.SelectedValue,
                 IdiomaId = (int)CbIdioma.SelectedValue,
-                CategoriaId = (int)CbCategoria.SelectedValue,
+                Categorias = CkListCategorias.CheckedItems.Cast<Categoria>().ToList()
             };
 
             _livroRepository.Add(livro);

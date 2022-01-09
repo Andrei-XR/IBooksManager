@@ -36,7 +36,7 @@ namespace UIForms.Views.Livros
 
         private void BuscarLivro()
         {
-            this.Livro = _livroRepository.Get(l => l.Id == this.IdLivro);
+            this.Livro = _livroRepository.Get(l => l.Id == this.IdLivro, new[] { "Categorias" });
         }
 
         private void CarregarAutores()
@@ -70,9 +70,9 @@ namespace UIForms.Views.Livros
         {
             var categorias = _categoriaRepository.List().OrderBy(c => c.Nome).ToList();
 
-            CbCategoria.DisplayMember = "Nome";
-            CbCategoria.ValueMember = "Id";
-            CbCategoria.DataSource = categorias;
+            ((ListBox)CkListCategorias).DataSource = categorias;
+            ((ListBox)CkListCategorias).DisplayMember = "Nome";
+            ((ListBox)CkListCategorias).ValueMember = "Id";
         }
 
         private void CarregarDadosLivro()
@@ -85,7 +85,17 @@ namespace UIForms.Views.Livros
             CbAutor.SelectedValue = this.Livro.AutorId;
             CbEditora.SelectedValue = this.Livro.EditoraId;
             CbIdioma.SelectedValue = this.Livro.IdiomaId;
-            CbCategoria.SelectedValue = this.Livro.CategoriaId;
+
+            foreach (var categoria in this.Livro.Categorias)
+            {
+                for (int i = 0; i < CkListCategorias.Items.Count; i++)
+                {
+                    if (((Categoria)CkListCategorias.Items[i]).Id == categoria.Id)
+                    {
+                        CkListCategorias.SetItemCheckState(i, CheckState.Checked);
+                    }
+                }
+            }
         }
 
         private void SalvarEdicaoLivro()
@@ -98,7 +108,7 @@ namespace UIForms.Views.Livros
             this.Livro.AutorId = (int)CbAutor.SelectedValue;
             this.Livro.EditoraId = (int)CbEditora.SelectedValue;
             this.Livro.IdiomaId = (int)CbIdioma.SelectedValue;
-            this.Livro.CategoriaId = (int)CbCategoria.SelectedValue;
+            this.Livro.Categorias = CkListCategorias.CheckedItems.Cast<Categoria>().ToList();
 
             _livroRepository.Update(this.Livro);
         }

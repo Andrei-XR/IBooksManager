@@ -44,10 +44,10 @@
             this.NudPreco = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.TxtTitulo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.CbCategoria = new System.Windows.Forms.ComboBox();
+            this.CkListCategorias = new System.Windows.Forms.CheckedListBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NudAno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudPaginas)).BeginInit();
@@ -56,7 +56,7 @@
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.Location = new System.Drawing.Point(207, 322);
+            this.BtnCancelar.Location = new System.Drawing.Point(204, 388);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(108, 31);
             this.BtnCancelar.TabIndex = 45;
@@ -66,7 +66,7 @@
             // 
             // BtnSalvar
             // 
-            this.BtnSalvar.Location = new System.Drawing.Point(93, 322);
+            this.BtnSalvar.Location = new System.Drawing.Point(90, 388);
             this.BtnSalvar.Name = "BtnSalvar";
             this.BtnSalvar.Size = new System.Drawing.Size(108, 31);
             this.BtnSalvar.TabIndex = 44;
@@ -78,7 +78,7 @@
             // 
             this.CbIdioma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbIdioma.FormattingEnabled = true;
-            this.CbIdioma.Location = new System.Drawing.Point(94, 152);
+            this.CbIdioma.Location = new System.Drawing.Point(92, 124);
             this.CbIdioma.Name = "CbIdioma";
             this.CbIdioma.Size = new System.Drawing.Size(260, 24);
             this.CbIdioma.TabIndex = 43;
@@ -86,7 +86,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(28, 155);
+            this.label9.Location = new System.Drawing.Point(12, 127);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(51, 16);
             this.label9.TabIndex = 40;
@@ -96,7 +96,7 @@
             // 
             this.CbEditora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbEditora.FormattingEnabled = true;
-            this.CbEditora.Location = new System.Drawing.Point(94, 122);
+            this.CbEditora.Location = new System.Drawing.Point(92, 94);
             this.CbEditora.Name = "CbEditora";
             this.CbEditora.Size = new System.Drawing.Size(260, 24);
             this.CbEditora.TabIndex = 42;
@@ -104,7 +104,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(28, 125);
+            this.label8.Location = new System.Drawing.Point(12, 97);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 16);
             this.label8.TabIndex = 39;
@@ -115,7 +115,7 @@
             this.CbAutor.DisplayMember = "label";
             this.CbAutor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbAutor.FormattingEnabled = true;
-            this.CbAutor.Location = new System.Drawing.Point(94, 92);
+            this.CbAutor.Location = new System.Drawing.Point(92, 64);
             this.CbAutor.Name = "CbAutor";
             this.CbAutor.Size = new System.Drawing.Size(260, 24);
             this.CbAutor.TabIndex = 41;
@@ -124,7 +124,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 95);
+            this.label7.Location = new System.Drawing.Point(12, 67);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 16);
             this.label7.TabIndex = 38;
@@ -132,7 +132,7 @@
             // 
             // NudAno
             // 
-            this.NudAno.Location = new System.Drawing.Point(94, 267);
+            this.NudAno.Location = new System.Drawing.Point(92, 239);
             this.NudAno.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -144,7 +144,7 @@
             // 
             // NudQuantidade
             // 
-            this.NudQuantidade.Location = new System.Drawing.Point(94, 239);
+            this.NudQuantidade.Location = new System.Drawing.Point(92, 211);
             this.NudQuantidade.Name = "NudQuantidade";
             this.NudQuantidade.Size = new System.Drawing.Size(97, 22);
             this.NudQuantidade.TabIndex = 36;
@@ -152,7 +152,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 269);
+            this.label6.Location = new System.Drawing.Point(12, 241);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 16);
             this.label6.TabIndex = 31;
@@ -160,7 +160,7 @@
             // 
             // NudPaginas
             // 
-            this.NudPaginas.Location = new System.Drawing.Point(94, 211);
+            this.NudPaginas.Location = new System.Drawing.Point(92, 183);
             this.NudPaginas.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -173,7 +173,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 241);
+            this.label5.Location = new System.Drawing.Point(12, 213);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 16);
             this.label5.TabIndex = 30;
@@ -182,7 +182,7 @@
             // NudPreco
             // 
             this.NudPreco.DecimalPlaces = 2;
-            this.NudPreco.Location = new System.Drawing.Point(94, 183);
+            this.NudPreco.Location = new System.Drawing.Point(92, 155);
             this.NudPreco.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -195,7 +195,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 213);
+            this.label4.Location = new System.Drawing.Point(12, 185);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 16);
             this.label4.TabIndex = 29;
@@ -204,20 +204,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 185);
+            this.label3.Location = new System.Drawing.Point(12, 157);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 16);
             this.label3.TabIndex = 28;
             this.label3.Text = "Preço:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 16);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Genero:";
             // 
             // TxtTitulo
             // 
@@ -229,35 +220,43 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 42);
+            this.label1.Location = new System.Drawing.Point(12, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 16);
             this.label1.TabIndex = 26;
             this.label1.Text = "Titulo:";
             // 
-            // CbCategoria
+            // CkListCategorias
             // 
-            this.CbCategoria.DisplayMember = "label";
-            this.CbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CbCategoria.FormattingEnabled = true;
-            this.CbCategoria.Location = new System.Drawing.Point(94, 62);
-            this.CbCategoria.Name = "CbCategoria";
-            this.CbCategoria.Size = new System.Drawing.Size(260, 24);
-            this.CbCategoria.TabIndex = 41;
-            this.CbCategoria.ValueMember = "value";
+            this.CkListCategorias.CheckOnClick = true;
+            this.CkListCategorias.FormattingEnabled = true;
+            this.CkListCategorias.Location = new System.Drawing.Point(90, 267);
+            this.CkListCategorias.Name = "CkListCategorias";
+            this.CkListCategorias.Size = new System.Drawing.Size(262, 106);
+            this.CkListCategorias.TabIndex = 47;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 267);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(76, 16);
+            this.label10.TabIndex = 46;
+            this.label10.Text = "Categorias:";
             // 
             // FrmEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 368);
+            this.ClientSize = new System.Drawing.Size(384, 436);
+            this.Controls.Add(this.CkListCategorias);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnSalvar);
             this.Controls.Add(this.CbIdioma);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.CbEditora);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.CbCategoria);
             this.Controls.Add(this.CbAutor);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.NudAno);
@@ -268,7 +267,6 @@
             this.Controls.Add(this.NudPreco);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.TxtTitulo);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -301,9 +299,9 @@
         private System.Windows.Forms.NumericUpDown NudPreco;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtTitulo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox CbCategoria;
+        private System.Windows.Forms.CheckedListBox CkListCategorias;
+        private System.Windows.Forms.Label label10;
     }
 }

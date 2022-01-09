@@ -64,7 +64,7 @@
             this.GbDadosIdioma.Controls.Add(this.LblIdioma);
             this.GbDadosIdioma.Location = new System.Drawing.Point(12, 269);
             this.GbDadosIdioma.Name = "GbDadosIdioma";
-            this.GbDadosIdioma.Size = new System.Drawing.Size(347, 61);
+            this.GbDadosIdioma.Size = new System.Drawing.Size(413, 61);
             this.GbDadosIdioma.TabIndex = 8;
             this.GbDadosIdioma.TabStop = false;
             this.GbDadosIdioma.Text = "Dados Idioma";
@@ -94,7 +94,7 @@
             this.GbDadosEditora.Controls.Add(this.LblEditora);
             this.GbDadosEditora.Location = new System.Drawing.Point(12, 202);
             this.GbDadosEditora.Name = "GbDadosEditora";
-            this.GbDadosEditora.Size = new System.Drawing.Size(347, 61);
+            this.GbDadosEditora.Size = new System.Drawing.Size(413, 61);
             this.GbDadosEditora.TabIndex = 7;
             this.GbDadosEditora.TabStop = false;
             this.GbDadosEditora.Text = "Dados Editora";
@@ -124,7 +124,7 @@
             this.GbDadosAutor.Controls.Add(this.LblAutor);
             this.GbDadosAutor.Location = new System.Drawing.Point(12, 133);
             this.GbDadosAutor.Name = "GbDadosAutor";
-            this.GbDadosAutor.Size = new System.Drawing.Size(347, 63);
+            this.GbDadosAutor.Size = new System.Drawing.Size(413, 63);
             this.GbDadosAutor.TabIndex = 6;
             this.GbDadosAutor.TabStop = false;
             this.GbDadosAutor.Text = "Dados Autor";
@@ -162,7 +162,7 @@
             this.GbDadosLivro.Controls.Add(this.label8);
             this.GbDadosLivro.Location = new System.Drawing.Point(12, 12);
             this.GbDadosLivro.Name = "GbDadosLivro";
-            this.GbDadosLivro.Size = new System.Drawing.Size(347, 115);
+            this.GbDadosLivro.Size = new System.Drawing.Size(413, 115);
             this.GbDadosLivro.TabIndex = 5;
             this.GbDadosLivro.TabStop = false;
             this.GbDadosLivro.Text = "Dados Livro";
@@ -268,7 +268,7 @@
             this.groupBox1.Controls.Add(this.LblCategoria);
             this.groupBox1.Location = new System.Drawing.Point(12, 336);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(347, 61);
+            this.groupBox1.Size = new System.Drawing.Size(413, 68);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Categoria";
@@ -296,7 +296,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 411);
+            this.ClientSize = new System.Drawing.Size(437, 414);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.GbDadosIdioma);
             this.Controls.Add(this.GbDadosEditora);
