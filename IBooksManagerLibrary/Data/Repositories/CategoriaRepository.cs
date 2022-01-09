@@ -12,7 +12,7 @@ namespace IBooksManagerLibrary.Data.Repositories
     {
         public bool ValidarRemocao(int id)
         {
-            bool semRelacaoComLivros = !_context.Livros.Any(l => l.CategoriaId == id);
+            bool semRelacaoComLivros = !_context.Livros.Any(l => l.Categorias.Where(c => c.Id == id).Count() > 0);
             return semRelacaoComLivros;
         }
     }
