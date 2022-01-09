@@ -40,6 +40,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="RefactorThis.GraphDiff, Version=3.1.3.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
+      <HintPath>..\packages\RefactorThis.GraphDiff.3.1.3\lib\net40\RefactorThis.GraphDiff.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -53,7 +56,6 @@
   <ItemGroup>
     <Compile Include="Data\Contracts\IAutorRepository.cs" />
     <Compile Include="Data\Contracts\ICategoriaRepository.cs" />
-    <Compile Include="Data\Contracts\ICrudRepository.cs" />
     <Compile Include="Data\Contracts\IEditoraRepository.cs" />
     <Compile Include="Data\Contracts\IEntity.cs" />
     <Compile Include="Data\Contracts\IIdiomaRepository.cs" />
@@ -71,9 +73,9 @@
     <Compile Include="Migrations\202112230014337_inicial.designer.cs">
       <DependentUpon>202112230014337_inicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202112310155508_criacao_tabela_categorias.cs" />
-    <Compile Include="Migrations\202112310155508_criacao_tabela_categorias.designer.cs">
-      <DependentUpon>202112310155508_criacao_tabela_categorias.cs</DependentUpon>
+    <Compile Include="Migrations\202201080250075_criacao_tabela_categorias.cs" />
+    <Compile Include="Migrations\202201080250075_criacao_tabela_categorias.designer.cs">
+      <DependentUpon>202201080250075_criacao_tabela_categorias.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Autor.cs" />
@@ -91,8 +93,8 @@
     <EmbeddedResource Include="Migrations\202112230014337_inicial.resx">
       <DependentUpon>202112230014337_inicial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112310155508_criacao_tabela_categorias.resx">
-      <DependentUpon>202112310155508_criacao_tabela_categorias.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202201080250075_criacao_tabela_categorias.resx">
+      <DependentUpon>202201080250075_criacao_tabela_categorias.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

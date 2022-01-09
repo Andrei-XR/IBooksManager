@@ -6,10 +6,11 @@ using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq.Expressions;
+using RefactorThis.GraphDiff;
 
 namespace IBooksManagerLibrary.Data.Repositories
 {
-    public abstract class CrudRepository<T> : ICrudRepository<T> where T : class
+    public abstract class CrudRepository<T> where T : class, new()
     {
         protected readonly DbIBooksContext _context = new DbIBooksContext();
 
@@ -43,7 +44,7 @@ namespace IBooksManagerLibrary.Data.Repositories
 
         public virtual void Update(T entity)
         {
-            _context.Entry(entity).State = EntityState.Modified;
+            _context.UpdateGraph(entity);
             _context.SaveChanges();
         }
     }

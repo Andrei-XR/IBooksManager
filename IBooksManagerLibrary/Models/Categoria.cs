@@ -9,7 +9,14 @@ namespace IBooksManagerLibrary.Models
 {
     public class Categoria : IEntity
     {
+        public Categoria()
+        {
+            Livros = new List<Livro>();
+        }
+
         public int Id { get; set; }
         public string Nome { get; set; }
+
+        public virtual List<Livro> Livros { get; set; }
     }
 }
